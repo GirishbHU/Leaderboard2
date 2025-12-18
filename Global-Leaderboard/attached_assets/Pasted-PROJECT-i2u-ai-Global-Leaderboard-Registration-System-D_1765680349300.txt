@@ -1,0 +1,628 @@
+PROJECT: i2u.ai Global Leaderboard & Registration System
+DEPLOYMENT: Replit with PostgreSQL (native integration)
+BUILD: Complete full-stack (frontend + backend + database)
+
+STACK:
+- Next.js 14 with App Router + TypeScript
+- React 18 with Tailwind CSS
+- Prisma ORM connected to Replit PostgreSQL
+- NextAuth.js + JWT authentication
+- Payment integration (Stripe USD test mode + Cashfree INR test mode)
+
+IMPORTANT: This project uses Replit's built-in PostgreSQL.
+Replit provides: DATABASE_URL environment variable automatically.
+No additional setup needed - Prisma will auto-detect the connection.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESIGN SYSTEM:
+
+Colors:
+- Primary Teal: #218089 (buttons, links, highlights)
+- Background Cream: #FCFCF9 (main canvas)
+- Surface White: #FFFFFF (cards, containers)
+- Dark Mode: #1F2121 (charcoal background)
+- Text Dark: #134252 (slate)
+- Text Light: #667479 (gray)
+- Success: #22C55E (green)
+- Warning: #F97316 (orange)
+- Error: #EF4444 (red)
+
+Typography:
+- Font: System sans-serif (-apple-system, BlinkMacSystemFont, Segoe UI)
+- Headings: Bold (600), 24-32px, 1.2 line height
+- Body: Regular (400), 14-16px, 1.5 line height
+- Labels: Medium (500), 12-14px
+
+Components:
+- Buttons: Teal bg, white text, 8px padding, 8px radius, hover effect
+- Cards: White bg, light gray border, 12px radius, subtle shadow
+- Inputs: Light gray bg, 8px padding, 8px radius, focus teal border
+- Forms: Labels above inputs, clear spacing
+
+Layout:
+- Mobile-first responsive design
+- Card-based modern SaaS aesthetic
+- Generous spacing (16px base unit)
+- Dark mode support (toggle in header)
+- Smooth transitions and animations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DATABASE SCHEMA (Prisma - will auto-connect to Replit PostgreSQL):
+
+model User {
+  id                    String      @id @default(cuid())
+  email                 String      @unique
+  name                  String
+  role                  String      // "builder" | "investor" | "enabler"
+  country               String
+  sector                String
+  currency              String      // "INR" | "USD"
+  displayPreference     String      // "real_name" | "username" | "anonymous"
+  registrationNumber    Int         @unique
+  registrationDate      DateTime    @default(now())
+  createdAt             DateTime    @default(now())
+  
+  wallet                Wallet?
+  referralCode          ReferralCode?
+  leaderboardRanking    LeaderboardRanking?
+  payments              Payment[]
+  transactions          Transaction[]
+  referralsGiven        ReferralEarning[]   @relation("referrer")
+  referralsReceived     ReferralEarning[]   @relation("referred")
+
+  @@index([email])
+  @@index([country])
+  @@index([sector])
+}
+
+model Wallet {
+  id                String      @id @default(cuid())
+  userId            String      @unique
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  inrBalance        Float       @default(0)
+  inrPending        Float       @default(0)
+  usdBalance        Float       @default(0)
+  usdPending        Float       @default(0)
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  @@index([userId])
+}
+
+model ReferralCode {
+  id                String      @id @default(cuid())
+  userId            String      @unique
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  code              String      @unique
+  createdAt         DateTime    @default(now())
+
+  @@index([code])
+}
+
+model ReferralEarning {
+  id                String      @id @default(cuid())
+  referrerId        String
+  referrer          User        @relation("referrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  
+  referredId        String
+  referred          User        @relation("referred", fields: [referredId], references: [id], onDelete: Cascade)
+  
+  amount            Float
+  currency          String      // "INR" | "USD"
+  unlockedAt        DateTime?   // Day 30 after registration
+  createdAt         DateTime    @default(now())
+
+  @@index([referrerId])
+  @@index([referredId])
+}
+
+model LeaderboardRanking {
+  id                String      @id @default(cuid())
+  userId            String      @unique
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  rank              Int
+  referralCount     Int         @default(0)
+  totalEarnings     Float       @default(0)
+  percentile        Float       @default(0)
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  @@index([rank])
+  @@index([userId])
+}
+
+model Payment {
+  id                String      @id @default(cuid())
+  userId            String
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  amount            Float
+  currency          String      // "INR" | "USD"
+  gateway           String      // "stripe" | "cashfree"
+  externalId        String      // transaction ID from payment gateway
+  status            String      // "pending" | "completed" | "failed"
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model Transaction {
+  id                String      @id @default(cuid())
+  userId            String
+  user              User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type              String      // "referral_earning" | "payment" | "payout"
+  amount            Float
+  currency          String      // "INR" | "USD"
+  status            String      // "pending" | "completed" | "failed"
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  @@index([userId])
+  @@index([type])
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PAGES & ROUTES:
+
+1. REGISTRATION (Multi-Step Form)
+   Route: /register
+   
+   Step 1: "Choose Your Role"
+   - Radio buttons: Builder, Investor, Enabler (with descriptions)
+   - Card layout for each option
+   - Next button
+   
+   Step 2: "Your Profile"
+   - Name input
+   - Email input
+   - Country dropdown (195 countries)
+   - Sector dropdown (130+ sectors)
+   - Display preference radio (real name, username, anonymous)
+   - Currency radio (INR, USD)
+   - Next button
+   
+   Step 3: "Payment"
+   - Show tier price based on registration number
+   - Dynamic pricing: 1-100: ₹999/$14.99, 101-200: ₹1,999/$29.99, ... 901+: ₹9,999/$149.99
+   - Payment method selection (Stripe or Cashfree test mode)
+   - Complete registration button
+   - Success message with referral code display
+
+2. DASHBOARD (Main Hub)
+   Route: /dashboard
+   
+   Components:
+   - Welcome card (user name, rank badge, country/sector)
+   - 4 stat cards:
+     * Your Rank (rank #, percentile, movement indicator ↑↓)
+     * Next Milestone (positions to advance, target rank)
+     * Referral Performance (referral code, total referrals, earnings)
+     * Wallet Balance (available INR, available USD, pending amounts, unlock date)
+   - Subscription tier badge (Beginner/Professional/Advanced/Pro Max Ultra)
+   - Quick action buttons (View Leaderboard, Share Referral, Check Wallet)
+
+3. LEADERBOARD (Global View with Filters)
+   Route: /leaderboard
+   
+   Components:
+   - Title: "Global Leaderboard"
+   - Filter section:
+     * Country dropdown (195 countries)
+     * Sector dropdown (130+ sectors)
+     * Stage filter (optional)
+   - Search bar (search by username)
+   - User's current position (sticky/highlighted, shows rank, stats)
+   - Ranking list (rendered as modern cards):
+     * Rank number (bold, large, 24px)
+     * User name (with display preference handling)
+     * Country + sector badge
+     * Number of referrals (formatted)
+     * Total earnings (formatted with currency: ₹ or $)
+     * Subscription tier badge
+   - Pagination: 10 users per page
+   - Smooth scrolling, loading states, error messages
+
+4. WALLET (Multi-Tab Interface)
+   Route: /wallet
+   
+   Tab 1: "Balance"
+   - Two cards side-by-side: INR Wallet | USD Wallet
+   - Each showing:
+     * Available balance (prominent, large font)
+     * Pending balance (smaller font)
+     * Total earned (smaller font)
+     * Unlock date for pending amounts
+   - Request Payout button
+
+   Tab 2: "Referrals"
+   - Your referral code (large text, copyable button, one-click copy)
+   - QR code (optional enhancement)
+   - List of referrals:
+     * Name of person who referred
+     * Date of referral
+     * Amount earned
+     * Status (pending, available, paid)
+   - Share buttons (Twitter, LinkedIn, Email - use share intents)
+
+   Tab 3: "Transactions"
+   - Transaction history table:
+     * Date (formatted: "Dec 14, 2025")
+     * Type (Referral Earning, Payment, Payout)
+     * Amount (formatted with currency)
+     * Currency (INR, USD)
+     * Status (Pending, Completed, Failed)
+   - Filter by date range (from/to)
+   - Export to CSV button
+
+5. ADMIN DASHBOARD
+   Route: /admin
+   Access: Admin users only (check in middleware)
+   
+   Overview Cards:
+   - Total Users (display count)
+   - Total Revenue (sum INR + USD combined display)
+   - Top Referrers (list of top 5 users)
+   - Fraud Alerts (count and list)
+   
+   Controls:
+   - Leaderboard freeze toggle (freezes rankings temporarily)
+   - Custom sector review button
+   - Fraud flags management list (view/clear)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+API ENDPOINTS (All must work):
+
+Authentication:
+- POST /api/auth/register (email, password, name, role, country, sector, currency)
+- POST /api/auth/login (email, password)
+- GET /api/auth/me (returns current user data)
+- POST /api/auth/logout
+
+Leaderboard:
+- GET /api/leaderboard/global?page=1&limit=10&country=&sector= (paginated, filterable)
+- GET /api/leaderboard/by-country/:country
+- GET /api/leaderboard/by-sector/:sector
+- GET /api/leaderboard/my-position (current user's rank and stats)
+
+Wallet:
+- GET /api/wallet/balance (INR balance, USD balance, pending amounts)
+- GET /api/wallet/transactions (user's transaction history)
+- GET /api/wallet/referrals/my-code (returns user's referral code)
+- GET /api/wallet/referrals/list (list of user's referrals)
+- POST /api/wallet/request-payout (request payout with amount)
+
+Payments:
+- POST /api/payments/initiate (currency, amount, method - stripe or cashfree)
+- POST /api/payments/webhook/stripe (handle Stripe webhook)
+- POST /api/payments/webhook/cashfree (handle Cashfree webhook)
+- GET /api/payments/history (user's payment history)
+
+Admin:
+- GET /api/admin/dashboard (overview stats)
+- PUT /api/admin/leaderboard-freeze (toggle boolean)
+- GET /api/admin/fraud-flags (fraud alert list)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BUSINESS LOGIC:
+
+Leaderboard Ranking:
+- Primary: referralCount DESC
+- Secondary: registrationDate ASC (earlier = higher rank on tie)
+- Tertiary: extraPaidAmount DESC (users who paid more tier higher)
+- Recalculate ranking after every new referral
+- Store rank, percentile in LeaderboardRanking table
+
+Referral System:
+- Day 0: User registers, immediately gets referral code, referral is pending
+- Day 1: Referral counted in leaderboard rankings
+- Day 30: Referral earnings become available for withdrawal
+- Day 60: Full eligibility for automatic payout (optional feature)
+
+Dynamic Pricing (Based on Registration #):
+- Reg #1-100: ₹999 (INR) | $14.99 (USD)
+- Reg #101-200: ₹1,999 | $29.99
+- Reg #201-300: ₹3,999 | $49.99
+- Reg #301-500: ₹5,999 | $79.99
+- Reg #501-900: ₹7,999 | $99.99
+- Reg #901+: ₹9,999 | $149.99
+
+Multi-Currency (Separate Buckets):
+- INR users: Stripe payments disabled, Cashfree enabled, balance in INR
+- USD users: Cashfree disabled, Stripe enabled, balance in USD
+- No automatic currency conversion (independent wallets)
+- Referral earnings match user's currency preference
+
+Payment Processing (TEST MODE):
+Stripe (USD):
+- Create PaymentIntent with USD amount
+- Return client secret for payment
+- Handle webhook (charge.completed event)
+- Update wallet USD balance on success
+- Store payment record
+
+Cashfree (INR):
+- Create order with INR amount
+- Return order ID and checkout URL
+- Handle webhook (PAID event)
+- Update wallet INR balance on success
+- Store payment record
+
+Authentication & Sessions:
+- NextAuth.js with JWT tokens
+- Email/password authentication (bcrypt hashing)
+- Session tokens valid for 24 hours
+- Refresh token mechanism
+- Protected routes require auth middleware
+- Admin routes check user.role === 'admin'
+
+Email Verification:
+- Stub implementation (console.log instead of sending)
+- Marks user as verified immediately
+- Placeholder for SendGrid integration later
+- Don't block registration on email verification
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SEED DATA (FROM CSV):
+
+CSV File: i2u_mock_registrations_350.csv
+Expected Columns:
+registrationNumber,email,name,role,country,sector,currency,displayPreference,
+price,referralCode,totalEarnings,inrBalance,usdBalance,inrPending,usdPending,
+referralCount,percentile,subscriptionTier,createdAt
+
+Prisma Seed Script (prisma/seed.ts):
+1. Read CSV file line by line
+2. For each row:
+   - Create User record (registrationNumber unique, auto-increment email if duplicate)
+   - Create Wallet record (use CSV balances for INR and USD)
+   - Create ReferralCode record (use CSV referral codes)
+   - Create LeaderboardRanking record (use CSV rank, earnings, percentile)
+   - Create ReferralEarnings records (populate based on referral relationships from CSV)
+3. Create indexes for performance
+4. Verify 350 users created
+
+Run Command:
+npm run prisma:seed
+
+Expected Result:
+- 350 User records created
+- 350 Wallet records with accurate balances
+- 350 ReferralCode records
+- 350 LeaderboardRanking records
+- Referral relationships established
+- Completes in ~30 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROJECT STRUCTURE:
+
+/app
+  /api
+    /auth
+      /register
+        route.ts (POST)
+      /login
+        route.ts (POST)
+      /me
+        route.ts (GET)
+      /logout
+        route.ts (POST)
+    /leaderboard
+      /global
+        route.ts (GET with filters)
+      /by-country
+        /[country]
+          route.ts (GET)
+      /by-sector
+        /[sector]
+          route.ts (GET)
+      /my-position
+        route.ts (GET)
+    /wallet
+      /balance
+        route.ts (GET)
+      /transactions
+        route.ts (GET)
+      /referrals
+        /my-code
+          route.ts (GET)
+        /list
+          route.ts (GET)
+      /request-payout
+        route.ts (POST)
+    /payments
+      /initiate
+        route.ts (POST)
+      /webhook
+        /stripe
+          route.ts (POST)
+        /cashfree
+          route.ts (POST)
+      /history
+        route.ts (GET)
+    /admin
+      /dashboard
+        route.ts (GET)
+      /leaderboard-freeze
+        route.ts (PUT)
+      /fraud-flags
+        route.ts (GET)
+  
+  /register
+    page.tsx (registration form)
+  /dashboard
+    page.tsx (main dashboard)
+  /leaderboard
+    page.tsx (global leaderboard)
+  /wallet
+    page.tsx (wallet interface)
+  /admin
+    page.tsx (admin dashboard)
+  
+  /layout.tsx (root layout)
+  page.tsx (home/landing)
+
+/lib
+  /auth.ts (NextAuth configuration)
+  /db.ts (Prisma client singleton)
+  /utils.ts (helper functions)
+  /types.ts (TypeScript types)
+
+/components
+  /Header.tsx (navigation header)
+  /Footer.tsx (footer)
+  /Navigation.tsx (nav menu)
+  /RegistrationForm.tsx (3-step form)
+  /DashboardCards.tsx (stat cards)
+  /LeaderboardTable.tsx (leaderboard list)
+  /WalletTabs.tsx (wallet interface)
+  /AdminOverview.tsx (admin dashboard)
+
+/styles
+  /globals.css (Tailwind + global styles)
+
+/prisma
+  schema.prisma (database schema)
+  seed.ts (seed script for CSV)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STYLING (Tailwind CSS):
+
+Configuration:
+- Use Tailwind CSS for all styling
+- Mobile-first approach (default = mobile, add md: lg: for larger screens)
+- Dark mode support (toggle in header stores in localStorage)
+- Custom colors in tailwind.config.js (teal, cream, charcoal)
+- Smooth transitions (150ms ease)
+- Responsive breakpoints: 640px (sm), 768px (md), 1024px (lg), 1280px (xl)
+
+Design System in CSS:
+- Color variables for consistency
+- Spacing system (4px base unit: 4, 8, 12, 16, 20, 24, 32px)
+- Typography scale (12px, 14px, 16px, 18px, 20px, 24px, 32px)
+- Border radius (6px, 8px, 10px, 12px)
+- Shadows (sm, md, lg for depth)
+
+Dark Mode Implementation:
+- HTML element gets 'dark' class (toggle button stores in localStorage)
+- Use dark: prefix for dark mode styles
+- Smooth color transition (200ms)
+- Automatic system preference detection as fallback
+
+Responsive Design Checklist:
+- Mobile (320px): Full width, stacked layout
+- Tablet (768px): 2-column grid, increased padding
+- Desktop (1024px+): 3-4 column grid, generous margins
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ENVIRONMENT VARIABLES (.env.local):
+
+DATABASE_URL=postgresql://...   (Replit provides this automatically)
+NEXTAUTH_SECRET=your-secret-key (generate: openssl rand -base64 32)
+NEXTAUTH_URL=http://localhost:3000 (for local dev)
+
+STRIPE_PUBLIC_KEY=pk_test_...   (from Stripe dashboard)
+STRIPE_SECRET_KEY=sk_test_...   (from Stripe dashboard)
+
+CASHFREE_APP_ID=...             (from Cashfree dashboard)
+CASHFREE_SECRET_KEY=...         (from Cashfree dashboard)
+CASHFREE_API_VERSION=2023-08-01 (latest version)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMMEDIATE NEXT STEPS (After Code Generation):
+
+1. npm install (install all dependencies)
+2. npx prisma db push (sync schema with Replit PostgreSQL)
+3. npm run prisma:seed (load 350 users from CSV)
+4. npm run dev (start development server)
+5. Open browser: http://localhost:3000
+6. Test registration flow (should create new users in PostgreSQL)
+7. Test leaderboard (should display all 350 seeded users)
+8. Test wallet (should show seeded balance data)
+9. Check admin dashboard (should show stats from seeded data)
+
+All data lives in Replit's PostgreSQL database automatically.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEPLOYMENT TO NAMECHEAP LATER:
+
+When you deploy to Namecheap:
+1. PostgreSQL connection: Use your Namecheap database credentials
+2. Update DATABASE_URL in .env
+3. Run: npm run prisma:migrate deploy (applies migrations)
+4. Seed data persists in new database
+5. All 350 users available on production
+
+No re-seeding needed - your CSV data is permanent in the database.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DELIVERABLES (After Generation):
+
+✅ Complete Next.js 14 project (ready to run)
+✅ All 5 pages (register, dashboard, leaderboard, wallet, admin)
+✅ All 20+ API endpoints (working)
+✅ Prisma schema (8 models with indexes)
+✅ PostgreSQL seed script (loads 350 users)
+✅ Authentication system (NextAuth.js)
+✅ Payment integration (Stripe + Cashfree test mode)
+✅ Beautiful UI (Tailwind CSS, responsive, dark mode)
+✅ .env.example (shows all required variables)
+✅ package.json (all dependencies)
+✅ README (setup instructions)
+✅ Production-grade code (error handling, validation, security)
+
+READY FOR:
+✅ npm install && npm run dev (local development immediately)
+✅ npm run prisma:seed (load 350 users into Replit PostgreSQL)
+✅ npm run build (production build)
+✅ Deployment to Namecheap with existing PostgreSQL knowledge
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CRITICAL NOTES:
+
+✅ Replit PostgreSQL Integration: DATABASE_URL is automatically provided
+✅ No manual database setup: Prisma will detect and use it
+✅ Your CSV file (i2u_mock_registrations_350.csv): Place in project root
+✅ Seed script: Prisma seed.ts reads from CSV, creates all 350 records
+✅ Frontend + Backend: Everything in Next.js (no separate projects)
+✅ Tailwind CSS: All styling integrated, no external CSS files
+✅ Dark mode: Toggle in header, stored in localStorage
+✅ Payment test mode: Stripe 4242... and Cashfree test credentials
+✅ Email verification: Stubbed (console logs, no actual emails sent)
+✅ Production ready: All error handling, validation, security in place
+✅ Namecheap compatible: Uses PostgreSQL you already know
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+START NOW:
+1. Go to replit.com
+2. Create Node.js project
+3. Open Replit AI (Cmd+K)
+4. Paste this ENTIRE prompt
+5. Hit Enter
+6. Wait 20-30 minutes for generation
+7. Run: npm install && npm run prisma:seed && npm run dev
+8. Visit: http://localhost:3000
+9. See 350 users in your leaderboard!
+10. Deploy to Namecheap later with your existing PostgreSQL knowledge

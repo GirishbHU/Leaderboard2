@@ -1,0 +1,20 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd Global-Leaderboard && npm run build",
+    "start": "cd Global-Leaderboard && npm run start",
+    "dev": "cd Global-Leaderboard && npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^25.0.3",
+    "@types/nodemailer": "^7.0.4",
+    "nodemailer": "^7.0.11"
+  }
+}

@@ -1,0 +1,112 @@
+IMPORTANT: My app is built with Vite + Express (NOT Next.js).
+
+I need to deploy my Vite + Express app to Namecheap.
+
+My Namecheap hosting has:
+- Node.js support (shared hosting with cPanel)
+- cPanel File Manager (I'll use web upload, not FTP)
+- PostgreSQL database already created
+- I want to use my own domain
+
+Here's my actual stack:
+- Frontend: Vite + React
+- Backend: Express.js
+- Database: PostgreSQL (via Prisma)
+- Deployment: Namecheap cPanel
+
+**What I need you to do:**
+
+**1. Create a production build:**
+   - Run `npm run build` (this creates dist/ folder for Vite)
+   - Create dist/ folder (compiled frontend)
+   - Keep server.js or your Express entry point
+
+**2. Create a ZIP file called "i2u-vite-express-deploy.zip" containing:**
+   - dist/ folder (Vite compiled frontend - this is production-ready HTML/CSS/JS)
+   - server.js (or your Express entry point file)
+   - node_modules/ DO NOT INCLUDE (too big, I'll install on server)
+   - package.json (dependencies)
+   - package-lock.json (exact versions)
+   - prisma/ folder (database schema)
+   - lib/ folder (utilities)
+   - public/ folder (static assets if any)
+   - .env.production.example (template)
+
+**3. Create a file called "VITE-EXPRESS-STEPS.md" with:**
+
+   **Step 1: Download the ZIP**
+   - Download i2u-vite-express-deploy.zip from Replit
+   
+   **Step 2: Go to cPanel File Manager**
+   - Login to Namecheap cPanel
+   - Click "File Manager"
+   - Navigate to: /home/yourname/nodejs/i2u/
+   - (Create folder if it doesn't exist)
+   
+   **Step 3: Upload ZIP in cPanel**
+   - Click "Upload" button
+   - Select i2u-vite-express-deploy.zip
+   - Wait for upload (shows progress bar)
+   - Right-click on ZIP → "Extract"
+   - Done! All files extracted
+   
+   **Step 4: Create .env.production file**
+   - In cPanel File Manager, click "Create New File"
+   - Name: .env.production
+   - Paste your database and API keys:
+     DATABASE_URL=postgresql://user:password@host:5432/dbname
+     NODE_ENV=production
+     PORT=3000
+   - Save
+   
+   **Step 5: Install dependencies (in cPanel Terminal)**
+   - In cPanel, find "Terminal"
+   - Type: cd /home/yourname/nodejs/i2u/
+   - Type: npm install --production
+   - Wait 2-3 minutes
+   
+   **Step 6: Sync database (in cPanel Terminal)**
+   - Type: npx prisma db push
+   - Wait 1 minute
+   
+   **Step 7: Start app in cPanel**
+   - Go to cPanel → "Setup Node.js App"
+   - Click "Create Application"
+   - App root: /home/yourname/nodejs/i2u/
+   - Startup file: server.js (or your Express entry point)
+   - Click "Save"
+   - Click "Start Application"
+   
+   **Step 8: Test**
+   - Visit your domain
+   - Your Vite + Express app should be live!
+   - Frontend will be served from dist/ folder
+   - Backend APIs will work from Express
+
+**4. Create a checklist "VITE-EXPRESS-CHECKLIST.md":**
+   - Have your Namecheap login ready
+   - Have your PostgreSQL connection string (host, user, password, database)
+   - Have your domain ready
+   - Have any API keys (Stripe, Cashfree, etc.)
+   - Estimate time: 20-30 minutes total
+   - Difficulty: Very easy (just upload and click buttons)
+
+**Important Notes:**
+- Vite builds static files to dist/ folder - Express will serve these
+- Express backend runs on Node.js
+- dist/ folder = your frontend (HTML, CSS, JS, assets)
+- server.js = your Express backend (APIs, database connections)
+- When you visit your domain, it loads dist/index.html first, then Express handles API routes
+
+**DO NOT:**
+- Change my code structure
+- Modify database schema
+- Include node_modules in ZIP
+
+**At the end, tell me:**
+- Correct files to include in ZIP
+- Size of the ZIP file
+- Which file is the Express entry point
+- How Vite + Express will work together on Namecheap
+
+Make it clear for Vite + Express deployment (not Next.js).

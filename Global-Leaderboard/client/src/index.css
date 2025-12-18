@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant pro (&:is(.pro *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+/* 
+  Global Styles & Animations
+*/
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-size: 17px;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    line-height: 1.6;
+  }
+  
+  /* Magical Glow Cursor Follower - implemented via JS in layout, but here's a global cursor style if needed */
+  /* We'll rely on the CustomCursor component for the main effect */
+}
+
+@layer utilities {
+  .glow-hover {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .glow-hover::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none;
+    background: radial-gradient(circle at center, rgba(var(--primary), 0.15) 0%, transparent 70%);
+  }
+  
+  .glow-hover:hover::before {
+    @apply opacity-100;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(var(--primary), 0.5);
+  }
+}
+
+/* 
+  THEME 1: PRO MODE (Dynamic "Bluey" Tech)
+  Vibrant Electric Blues, Deep Abyss Backgrounds, Neon Glows
+*/
+.pro {
+  /* ... existing pro styles ... */
+  /* Background: Deep Abyss Blue #020617 -> 222 47% 11% */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+
+  /* Card: Semi-transparent Deep Blue */
+  --card: 222 47% 11%; /* Will rely on glassmorphism in UI */
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 222 47% 13%;
+  --popover-foreground: 210 40% 98%;
+
+  /* Primary: Electric Blue #3B82F6 -> 217 91% 60% */
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+
+  /* Secondary: Cyan/Teal #06B6D4 -> 189 94% 43% */
+  --secondary: 189 94% 43%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Muted: Slate Blue */
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 75%;
+
+  /* Accent: Bright Cyan glow */
+  --accent: 199 89% 48%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 217 33% 20%;
+  --input: 217 33% 20%;
+  
+  --ring: 217 91% 60%;
+
+  --radius: 0.75rem; 
+  
+  --sidebar: 222 47% 11%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 217 33% 17%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 217 33% 20%;
+  --sidebar-ring: 217 91% 60%;
+
+  /* Charts - Cyberpunk Blue Palette */
+  --chart-1: 217 91% 60%; /* Electric Blue */
+  --chart-2: 189 94% 43%; /* Cyan */
+  --chart-3: 262 83% 58%; /* Purple */
+  --chart-4: 326 100% 74%; /* Pink */
+  --chart-5: 142 71% 45%; /* Neon Green */
+}
+
+/* 
+  THEME 2: LIGHT MODE (Radium Green & Radioactive Vibes)
+  "Radium green like radio active effects"
+*/
+:root, .light {
+  /* Background: Very faint radioactive tint */
+  --background: 110 20% 98%; 
+  --foreground: 120 100% 10%;
+
+  /* Card: White with slight radioactive glow */
+  --card: 0 0% 100%;
+  --card-foreground: 120 100% 10%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 120 100% 10%;
+
+  /* Primary: RADIUM GREEN (Neon/Radioactive) #39FF14 -> 111 100% 54% 
+     Using a slightly darkened version for text legibility on white, 
+     but keeping it VERY vibrant. 
+     Actually, for "Radium", let's go full Neon and ensure contrasting text is dark. */
+  --primary: 111 100% 45%; /* Intense Neon Green */
+  --primary-foreground: 120 100% 5%; /* Almost black green for contrast */
+
+  /* Secondary: Toxic Yellow/Green #CCFF00 -> 72 100% 50% */
+  --secondary: 72 100% 50%;
+  --secondary-foreground: 120 100% 10%;
+
+  /* Accent: Hazardous Orange/Yellow */
+  --accent: 60 100% 50%;
+  --accent-foreground: 120 100% 10%;
+
+  /* Muted: Radioactive Gray */
+  --muted: 110 20% 95%;
+  --muted-foreground: 110 40% 25%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 111 50% 85%;
+  --input: 111 50% 85%;
+  --ring: 111 100% 54%; /* Glowing ring */
+
+  --radius: 0.75rem; 
+  
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 120 100% 10%;
+  --sidebar-primary: 111 100% 45%;
+  --sidebar-primary-foreground: 120 100% 5%;
+  --sidebar-accent: 72 100% 50%; 
+  --sidebar-accent-foreground: 120 100% 10%;
+  --sidebar-border: 111 50% 85%;
+  --sidebar-ring: 111 100% 54%;
+
+  /* Charts - Radioactive Palette */
+  --chart-1: 111 100% 45%; /* Radium Green */
+  --chart-2: 72 100% 50%;  /* Toxic Yellow */
+  --chart-3: 150 100% 50%; /* Neon Mint */
+  --chart-4: 60 100% 50%;  /* Hazard Yellow */
+  --chart-5: 180 100% 40%; /* Electric Cyan */
+}
+
+/* 
+  THEME 3: DARK MODE (Grey & Black)
+*/
+.dark {
+  /* Background: Black #09090b -> 240 10% 3.9% */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+
+  /* Card: Dark Grey #18181b -> 240 3.7% 15.9% */
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Primary: White or Light Grey */
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+
+  /* Secondary: Darker Grey */
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 75%;
+
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .category-bg-ai {
+    @apply bg-blue-500/10;
+  }
+
+  .category-bg-technology {
+    @apply bg-cyan-500/10;
+  }
+
+  .category-bg-leadership {
+    @apply bg-amber-500/10;
+  }
+
+  .category-bg-business {
+    @apply bg-green-500/10;
+  }
+}

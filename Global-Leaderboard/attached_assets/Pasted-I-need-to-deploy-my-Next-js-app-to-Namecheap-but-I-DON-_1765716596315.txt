@@ -1,0 +1,91 @@
+I need to deploy my Next.js app to Namecheap, but I DON'T want to use FTP.
+
+I have:
+- Namecheap shared hosting with cPanel
+- cPanel File Manager (not FTP)
+- PostgreSQL database ready on Namecheap
+
+Here's what I need:
+
+**1. Create a production build:**
+   - Run npm run build
+   - Create .next folder (optimized production code)
+
+**2. Create a simple ZIP file called "i2u-deploy.zip" that contains:**
+   - .next/ folder (production app)
+   - app/ folder (source code)
+   - public/ folder (images, static files)
+   - prisma/ folder (database)
+   - lib/ folder (utilities)
+   - components/ folder (React components)
+   - package.json (dependencies)
+   - package-lock.json (exact versions)
+   - next.config.mjs (config)
+   - server.js (startup script)
+   - .env.production.example (template)
+
+**3. Create a file called "NAMECHEAP-SIMPLE-STEPS.md" with:**
+
+   **Step 1: Download the ZIP**
+   - Download i2u-deploy.zip from Replit
+   
+   **Step 2: Go to cPanel File Manager**
+   - Login to Namecheap cPanel
+   - Click "File Manager"
+   - Navigate to: /home/yourname/nodejs/i2u/
+   - (Or create the folder if it doesn't exist)
+   
+   **Step 3: Upload ZIP in cPanel**
+   - Click "Upload" button
+   - Select i2u-deploy.zip
+   - Wait for upload (shows progress bar)
+   - Right-click on ZIP → "Extract"
+   - Done! All files are extracted
+   
+   **Step 4: Create .env.production file**
+   - In cPanel File Manager, click "Create New File"
+   - Name: .env.production
+   - Paste your database and API keys
+   - Save
+   
+   **Step 5: Install dependencies (in cPanel Terminal)**
+   - In cPanel, find "Terminal"
+   - Type: cd /home/yourname/nodejs/i2u/
+   - Type: npm install --production
+   - Wait 2-3 minutes
+   
+   **Step 6: Sync database (in cPanel Terminal)**
+   - Type: npx prisma db push
+   - Wait 1 minute
+   
+   **Step 7: Start app in cPanel**
+   - Go to cPanel → "Setup Node.js App"
+   - Click "Create Application"
+   - App root: /home/yourname/nodejs/i2u/
+   - Startup file: server.js
+   - Click "Save"
+   - Click "Start Application"
+   
+   **Step 8: Test**
+   - Visit your domain
+   - Your app should be live!
+
+**4. Create a checklist "BEFORE-YOU-START.md":**
+   - Have your Namecheap login ready
+   - Have your PostgreSQL details ready (host, user, password, database name)
+   - Have your Stripe test keys ready
+   - Have your Cashfree test keys ready
+   - Estimate time: 20-30 minutes total
+   - Difficulty: Very easy (just copy-paste in cPanel)
+
+**DO NOT:**
+- Create any other files
+- Modify my code
+- Change my database schema
+
+**At the end, tell me:**
+- Size of i2u-deploy.zip
+- What to do with the ZIP file
+- Clear step-by-step list
+
+Make it SUPER simple - assume user has never used terminal before.

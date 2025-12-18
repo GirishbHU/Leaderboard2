@@ -1,0 +1,125 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Segoe UI",
+      "role": "body"
+    },
+    {
+      "family": "Inter",
+      "role": "body"
+    },
+    {
+      "family": "Arial",
+      "role": "body"
+    },
+    {
+      "family": "Tahoma",
+      "role": "body"
+    },
+    {
+      "family": "Verdana",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#001220",
+    "accent": "#8B5CF6",
+    "background": "#1A1A1A",
+    "textPrimary": "#FFFFFF",
+    "link": "#001220"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Segoe UI",
+      "heading": "Segoe UI"
+    },
+    "fontStacks": {
+      "heading": [
+        "Inter",
+        "Segoe UI",
+        "Arial",
+        "sans-serif"
+      ],
+      "body": [
+        "Segoe UI",
+        "Tahoma",
+        "Geneva",
+        "Verdana",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Inter",
+        "Segoe UI",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "41.6px",
+      "h2": "32px",
+      "body": "18.4px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "12px"
+  },
+  "components": {
+    "input": {
+      "borderColor": "#CCCCCC",
+      "borderRadius": "12px"
+    },
+    "buttonPrimary": {
+      "background": "#8B5CF6",
+      "textColor": "#FFFFFF",
+      "borderRadius": "32px",
+      "shadow": "rgba(139, 92, 246, 0.3) 0px 4px 12px 0px"
+    },
+    "buttonSecondary": {
+      "background": "#1C1A60",
+      "textColor": "#FFFFFF",
+      "borderColor": "#000000",
+      "borderRadius": "15px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://ws.i2u.ai/assets/logo-CsAh8dJ6.png",
+    "favicon": "https://ws.i2u.ai/assets/logo-CsAh8dJ6.png",
+    "ogImage": "https://ws.i2u.ai/assets/logo-CsAh8dJ6.png"
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Logo #0 matches the brand name 'i2u.ai' and is located in the header, linking to the homepage, making it the primary brand logo.",
+    "confidence": 0.9
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 9,
+      "text": "Register Now",
+      "reasoning": "Button #9 has a vibrant blue background (#8B5CF6) and action-oriented text 'Register Now', making it the most suitable primary CTA. It stands out due to its color and clear call to action."
+    },
+    "secondary": {
+      "index": 2,
+      "text": "Pay Now ₹ 999 Only!Powered By Cashfree",
+      "reasoning": "Button #2 has a different background color (#1C1A60) and also contains action-oriented text 'Pay Now ₹ 999 Only! Powered By Cashfree'. It serves as a secondary CTA, distinct from the primary button."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "high",
+    "targetAudience": "tech-savvy users looking for payment solutions"
+  },
+  "designSystem": {
+    "framework": "tailwind",
+    "componentLibrary": null
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  }
+}

@@ -1,0 +1,114 @@
+You are working on my existing Replit project for i2u.ai (multi role platform with registration, dashboards, leaderboards, wallet, etc.).
+Goal: Turn the current app into a preview prototype where payments are simulated (no real gateway calls), but after “payment” users can log in and see all internal pages using mock data. Also provide an admin screen with separate credentials.
+1. High level behavior
+1.	Implement a simulated payment flow:
+•	On the pricing/subscription page, when a user clicks a “Pay now (Preview Mode)” button, treat this as a successful payment.
+•	Do NOT call PayPal or Cashfree yet. No real money, no real API calls.
+•	After this simulated payment, mark the user internally as “paid / active preview subscriber”.
+2.	After simulated payment:
+•	Automatically create or update a user record in the database (or in memory store if no DB yet) with:
+•	status: "active_preview"
+•	role: "user" (or equivalent existing role)
+•	Log the user in and redirect to the main dashboard.
+3.	Once logged in, the user should be able to:
+•	Access:
+•	Dashboard
+•	Leaderboard
+•	Wallet / referrals / transactions pages
+•	Any other internal account pages that already exist
+•	All pages should use mock data seeded by you (realistic but fake numbers and entries).
+•	Make sure navigation between these pages works cleanly in the UI.
+4.	Add an explicit “Preview Mode” banner:
+•	On all authenticated pages, show a small banner or badge like:
+•	“Preview Mode: Simulated payments, mock data only.”
+•	Implement this via a simple component/layout so it’s easy to remove later.
+2. Auth and roles
+1.	Normal user flow:
+•	Registration / login should still work as it does now OR you can simplify to:
+•	Step 1: Register (email + name + password)
+•	Step 2: Simulated payment (button)
+•	Step 3: Redirect to authenticated dashboard
+•	Make sure users who have completed simulated payment can log out and log back in and still see their internal pages without re “paying”.
+2.	Admin role:
+•	Add an admin user with:
+•	Email: admin@example.com 
+•	Password: AdminTest123! 
+•	role: "admin"
+•	Create or expose an Admin screen at a protected route like /admin (or use my existing admin screen if it already exists):
+•	Only accessible when logged in as admin.
+•	Show high level preview analytics using mock data:
+•	Number of preview users
+•	Example transactions
+•	Leaderboard summary, etc.
+•	Ensure that access control is enforced server side (middleware/guard), not just hidden in the frontend.
+3. Application structure & implementation details
+1.	Payment simulation:
+•	Implement a dedicated endpoint, e.g. POST /api/preview/checkout (or similar), that:
+•	Verifies the user is logged in.
+•	Marks the user’s subscription/payment status as “active_preview”.
+•	Returns success and the URL to redirect to (dashboard).
+•	On the frontend, wire the “Pay now (Preview Mode)” button to call this endpoint and then redirect to the dashboard.
+2.	User model & mock data:
+•	Extend the user model (DB schema or in memory store) with fields such as:
+•	planType (e.g. "preview")
+•	subscriptionStatus (e.g. "active_preview")
+•	role (e.g. "user" or "admin")
+•	Seed mock data for:
+•	Leaderboard entries
+•	Wallet balances and referral counts
+•	Transactions list
+•	Any other key sections on the dashboard
+•	Make sure mock data is realistic and structured for later replacement by real DB queries.
+3.	Routing & guards:
+•	Implement an auth guard/middleware so:
+•	Only authenticated users with subscriptionStatus === "active_preview" can access the internal user pages.
+•	Only users with role === "admin" can access the /admin route.
+•	Unauthenticated or unpaid users should be redirected to:
+•	Registration/login page, or
+•	Pricing/Preview payment page.
+4.	Config for future real payments:
+•	Introduce an environment variable: PAYMENTS_MODE with possible values:
+•	"mock" (default now)
+•	"sandbox"
+•	"live"
+•	For this task, implement only "mock" mode, but structure the code so adding PayPal/Cashfree integrations later is easy:
+•	Create a payment service module with a createCheckoutSession / processPayment abstraction.
+•	In "mock" mode, this just immediately returns success.
+4. UX and copy
+1.	Update UI copy so it is honest and investor friendly:
+•	On pricing page: “This is a Preview demo. Payments are simulated; no real charges are made.”
+•	On the success page / dashboard first visit: “You are viewing a Preview account with mock data.”
+2.	Provide clear navigation links in the top nav/sidebar to:
+•	Dashboard
+•	Leaderboard
+•	Wallet / Referrals
+•	Admin (only visible to admin user when logged in).
+5. Testing checklist (do this in the Replit console and browser)
+Implement and verify the following end to end tests:
+1.	User Preview Flow
+•	Visit the app as a new user.
+•	Register or log in.
+•	Click “Pay now (Preview Mode)”.
+•	Confirm:
+•	No external payment popup/open (no PayPal/Cashfree yet).
+•	User is redirected to the dashboard.
+•	Preview banner is visible.
+•	Navigation to leaderboard, wallet, etc. works and shows mock data.
+2.	Re login
+•	Log out.
+•	Log back in with the same account.
+•	Confirm user still has active_preview access and can view all internal pages without re paying.
+3.	Admin Access
+•	Log in as admin@example.com / AdminTest123!.
+•	Confirm access to /admin and that:
+•	It shows some aggregated preview mock stats.
+•	Non admin users cannot open /admin (they are redirected or shown “Access denied”).
+•	Fraud detection etc. S
+4.	Security/visibility
+•	Confirm that all internal routes are protected by server side checks (middleware/guards), not just hidden links.
+Produce a brief PREVIEW_README.md in the project root that explains:
+•	What “Preview Mode” is.
+•	How the simulated payment works.
+•	How to log in as a normal user and as admin.
+•	What needs to be changed later to connect real PayPal/Cashfree gateways (pointing to the payment service abstraction and PAYMENTS_MODE env var).
+

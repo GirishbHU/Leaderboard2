@@ -1,0 +1,898 @@
+[
+  {
+    "title": "Danny Auble: The Architect of Open-Source HPC Innovation Leading SchedMD into the NVIDIA Era",
+    "imageUrl": "/article-images/article-0.jpeg"
+  },
+  {
+    "title": "Genesis of IBM and Thomas Watson Sr.: From Computing-Tabulating-Recording to Computing Dominance (1896–1956)",
+    "imageUrl": "/article-images/article-1.jpeg"
+  },
+  {
+    "title": "Beyond Labels: Weak and Self-Supervised Learning as the Path to Unlimited Data and Scalable AI",
+    "imageUrl": "/article-images/article-2.png"
+  },
+  {
+    "title": "DevRev: Bridging the Developer-Customer Gap and Reshaping the Enterprise CRM Market",
+    "imageUrl": "/article-images/article-3.png"
+  },
+  {
+    "title": "Zeroth Principles Extended Series",
+    "imageUrl": "/article-images/article-4.png"
+  },
+  {
+    "title": "The Seven-Year-Old Test: Building Artificial Common Sense as the Foundation for General Intelligence",
+    "imageUrl": "/article-images/article-5.png"
+  },
+  {
+    "title": "Niccolo de Masi: The Physicist-CEO Leading IonQ's Quantum Revolution",
+    "imageUrl": "/article-images/article-6.jpeg"
+  },
+  {
+    "title": "From Prediction to Understanding: Causal Inference as the Gateway to True AI",
+    "imageUrl": "/article-images/article-7.png"
+  },
+  {
+    "title": "Dheeraj Pandey: The Architect of Hybrid Cloud Infrastructure and the Visionary Reshaping Enterprise IT",
+    "imageUrl": "/article-images/article-8.png"
+  },
+  {
+    "title": "Zeroth Principles - Part Two: AI as Spectacle, Humanity’s Infinite Mirror",
+    "imageUrl": "/article-images/article-9.png"
+  },
+  {
+    "title": "Meta's AI Present and Future: Llama, AGI, and the 2025-'30 Vision",
+    "imageUrl": "/article-images/article-10.jpeg"
+  },
+  {
+    "title": "Zeroth Principles - Part One: The Insight Precedes the Invention",
+    "imageUrl": "/article-images/article-11.png"
+  },
+  {
+    "title": "Meta's Mobile Revolution and Advertising Dominance (2012-'18)",
+    "imageUrl": "/article-images/article-12.jpeg"
+  },
+  {
+    "title": "Building Artificial Minds: World Models and Cognitive Development as the Path to AGI",
+    "imageUrl": "/article-images/article-13.png"
+  },
+  {
+    "title": "Meta's Metaverse Pivot and Reality Labs Investment (2019-'23)",
+    "imageUrl": "/article-images/article-14.jpeg"
+  },
+  {
+    "title": "Physics-Informed Machine Learning: Embedding the Laws of Nature into AI",
+    "imageUrl": "/article-images/article-15.png"
+  },
+  {
+    "title": "Meta's Genesis: From Harvard Dorm to Social Media Empire (2004-2012)",
+    "imageUrl": "/article-images/article-16.jpeg"
+  },
+  {
+    "title": "The AI Spring and the Lingering Winter: Beyond Pattern Recognition to Understanding Unknown Laws",
+    "imageUrl": "/article-images/article-17.png"
+  },
+  {
+    "title": "Entertainment in the AI Era: Generative Content, Personalization, and Future Models (2025-'30)",
+    "imageUrl": "/article-images/article-18.jpeg"
+  },
+  {
+    "title": "Streaming Wars, Password Sharing Crackdown, and Profitability Focus (2015-2025)",
+    "imageUrl": "/article-images/article-19.jpeg"
+  },
+  {
+    "title": "Netflix Origins and DVD Disruption (1997-2005)",
+    "imageUrl": "/article-images/article-20.jpeg"
+  },
+  {
+    "title": "Netflix Acquires Warner Bros. Discovery: The Entertainment Industry Consolidation Catalyst (December 2025)",
+    "imageUrl": "/article-images/article-21.jpeg"
+  },
+  {
+    "title": "Jacob DeWitte & Caroline Cochran: Building the Nuclear Renaissance Through Oklo Inc.",
+    "imageUrl": "/article-images/article-22.png"
+  },
+  {
+    "title": "Monte Carlo Simulation and Its Impact on AI",
+    "imageUrl": "/article-images/article-23.png"
+  },
+  {
+    "title": "Rajeeb (Raj) Hazra: The Architect Behind Quantinuum's Quantum Revolution",
+    "imageUrl": "/article-images/article-24.jpeg"
+  },
+  {
+    "title": "Microsoft's AI Future: Copilot Integration, Quantum Computing, AI Infrastructure, and Path to AGI (2025-2035)",
+    "imageUrl": "/article-images/article-25.jpeg"
+  },
+  {
+    "title": "Satya Nadella Era Part 2: From Cloud Leader to AI Powerhouse (2017-2025)",
+    "imageUrl": "/article-images/article-26.jpeg"
+  },
+  {
+    "title": "Satya Nadella Era Part 1: The Transformation Begins (2014-2017)",
+    "imageUrl": "/article-images/article-27.jpeg"
+  },
+  {
+    "title": "The Steve Ballmer and Interim Leadership Era: From Consolidation to Cloud Skepticism (2000-2013)",
+    "imageUrl": "/article-images/article-28.png"
+  },
+  {
+    "title": "The Bill Gates Era Part 3: Antitrust, Cloud Ambitions, and Gates' Transition (2000-2006)",
+    "imageUrl": "/article-images/article-29.jpeg"
+  },
+  {
+    "title": "Einstein: The Measure of Intelligence - The Ability to Change",
+    "imageUrl": "/article-images/article-30.png"
+  },
+  {
+    "title": "The Bill Gates Era Part 2: Windows Dominance and Personal Computing Revolution (1990-2000)",
+    "imageUrl": "/article-images/article-31.jpeg"
+  },
+  {
+    "title": "The Bill Gates Era Part 1: From Garage to Monopoly (1975-1990)",
+    "imageUrl": "/article-images/article-32.jpeg"
+  },
+  {
+    "title": "Alphabet's AI Future: Investments, Initiatives, and the Path to AGI and Beyond (2024-2030)",
+    "imageUrl": "/article-images/article-33.jpeg"
+  },
+  {
+    "title": "The ChatGPT Wake-Up Call: Google's Response to OpenAI and the AI Arms Race (2017–2025)",
+    "imageUrl": "/article-images/article-34.jpeg"
+  },
+  {
+    "title": "The DeepMind Acquisition and Early AI Initiatives: Google's Pivot to Artificial Intelligence (2011–2017)",
+    "imageUrl": "/article-images/article-35.jpeg"
+  },
+  {
+    "title": "Establishing Leadership: Google's Expansion and Product Ecosystem Dominance (2004–2014)",
+    "imageUrl": "/article-images/article-36.jpeg"
+  },
+  {
+    "title": "Google Genesis: The BackRub Project to Search Engine Supremacy (1996–2004)",
+    "imageUrl": "/article-images/article-37.jpeg"
+  },
+  {
+    "title": "Bryan Hanson & Solventum: Architecting Healthcare Independence from the 3M Legacy",
+    "imageUrl": "/article-images/article-38.jpeg"
+  },
+  {
+    "title": "Alex Kendall: The Visionary Redefining Autonomous Mobility with Embodied Intelligence",
+    "imageUrl": "/article-images/article-39.jpeg"
+  },
+  {
+    "title": "Rick Klausner: The Polymath Pioneer Transforming Cancer Detection and Cellular Medicine",
+    "imageUrl": "/article-images/article-40.jpeg"
+  },
+  {
+    "title": "The Evolution of AI Models: Understanding Foundation, Frontier, and Emerging Architectures",
+    "imageUrl": "/article-images/article-41.png"
+  },
+  {
+    "title": "Jay Chaudhry: The Architect of Zero Trust Security",
+    "imageUrl": "/article-images/article-42.jpeg"
+  },
+  {
+    "title": "Sridhar Ramaswamy: The Data Visionary Transforming Enterprise AI at Snowflake",
+    "imageUrl": "/article-images/article-43.jpeg"
+  },
+  {
+    "title": "Jensen Huang Beyond Nvidia: AI Investments, Philanthropy, and the Vision for Physical AI and Human-Digital Workforces",
+    "imageUrl": "/article-images/article-44.jpeg"
+  },
+  {
+    "title": "Jeff Bezos' AI Empire: From Bezos Expeditions to Project Prometheus",
+    "imageUrl": "/article-images/article-45.jpeg"
+  },
+  {
+    "title": "Bezos as Executive Chairman and the Vision for the Next Era (2021-Present)",
+    "imageUrl": "/article-images/article-46.jpeg"
+  },
+  {
+    "title": "AWS and the Cloud Revolution: From Internal Project to $51.5B Giant (2006–2021)",
+    "imageUrl": "/article-images/article-47.jpeg"
+  },
+  {
+    "title": "Amazon's Global Expansion and E-Commerce Dominance (2001–2010): From Dot-Com Survivor to Retail Powerhouse",
+    "imageUrl": "/article-images/article-48.jpeg"
+  },
+  {
+    "title": "The New Architects of Innovation: Alfred Lin and Pat Grady Take the Helm at Sequoia Capital",
+    "imageUrl": "/article-images/article-49.png"
+  },
+  {
+    "title": "Jeff Bezos' Early Years and the Struggle to Build Amazon: The Visionary Who Bet Everything on Books and the Internet",
+    "imageUrl": "/article-images/article-50.jpeg"
+  },
+  {
+    "title": "Nvidia's AI Era Dominance: The ChatGPT Catalyst and the Path to the World's Most Valuable Company",
+    "imageUrl": "/article-images/article-51.jpeg"
+  },
+  {
+    "title": "Nvidia's AI Foundation: From CUDA to the De Facto Standard Before ChatGPT",
+    "imageUrl": "/article-images/article-52.jpeg"
+  },
+  {
+    "title": "Nvidia's Gaming Dominance: The GeForce Revolution and the Rise of GPU Leadership",
+    "imageUrl": "/article-images/article-53.jpeg"
+  },
+  {
+    "title": "Jensen Huang's GPU Vision: From Immigrant Dishwasher to Silicon Valley Visionary, The Founding and Survival of Nvidia",
+    "imageUrl": "/article-images/article-54.jpeg"
+  },
+  {
+    "title": "Dr. Vik Bajaj: The Moonshot Architect Behind Project Prometheus",
+    "imageUrl": "/article-images/article-55.jpeg"
+  },
+  {
+    "title": "Avery Pennarun & Tailscale: Engineering the New Internet Through Authenticity and Innovation",
+    "imageUrl": "/article-images/article-56.png"
+  },
+  {
+    "title": "Applied Analysis of 8 AI Unicorns",
+    "imageUrl": "/article-images/article-57.png"
+  },
+  {
+    "title": "The AI Startup Ecosystem Bifurcates: Winners and Losers in the New Era",
+    "imageUrl": "/article-images/article-58.png"
+  },
+  {
+    "title": "The AI Performance Paradox: How Market Leaders Are Dramatically Exceeding Projections While the \"Bubble Burst\" Narrative Persists",
+    "imageUrl": "/article-images/article-59.png"
+  },
+  {
+    "title": "The Amodei Ascendancy: How Two Siblings Steered Anthropic from $183B to a Potential $350B Giant",
+    "imageUrl": "/article-images/article-60.jpeg"
+  },
+  {
+    "title": "Marc Tessier-Lavigne and David Baker: The Visionaries Reshaping Drug Discovery at Xaira Therapeutics",
+    "imageUrl": "/article-images/article-61.png"
+  },
+  {
+    "title": "The Visionary Quartet Behind Cursor: How Four MIT Students Built a $29.3 Billion AI Empire",
+    "imageUrl": "/article-images/article-62.jpeg"
+  },
+  {
+    "title": "Apple After Steve Jobs: A Legacy Sustained, A Vision Expanded, and a Company Transformed",
+    "imageUrl": "/article-images/article-63.jpeg"
+  },
+  {
+    "title": "Steve Jobs: The Phoenix Returns: Apple's Resurrection and a Legacy Sealed in Innovation",
+    "imageUrl": "/article-images/article-64.jpeg"
+  },
+  {
+    "title": "Steve Jobs: Pixar, Disney, and the Renaissance of Animation, The Visionary Years Between Exile and Return",
+    "imageUrl": "/article-images/article-65.jpeg"
+  },
+  {
+    "title": "Steve Jobs: From Garage Dreams to Expulsion, the Genesis and Exodus of Apple's Revolutionary Founder",
+    "imageUrl": "/article-images/article-66.jpeg"
+  },
+  {
+    "title": "Jerry Yang: From Yahoo! Pioneer to Silicon Valley Statesman",
+    "imageUrl": "/article-images/article-67.jpeg"
+  },
+  {
+    "title": "The Architect of Digital Transformation: Luca Ferrari's Blueprint for Building an All-Time Great Company",
+    "imageUrl": "/article-images/article-68.jpeg"
+  },
+  {
+    "title": "Ilkka Paananen: The Architect of Forever Games",
+    "imageUrl": "/article-images/article-69.jpeg"
+  },
+  {
+    "title": "Assaf Rappaport: The Architect of Cloud Security's Fastest Unicorn",
+    "imageUrl": "/article-images/article-70.jpeg"
+  },
+  {
+    "title": "Efe Cakarel of MUBI: Curating Cinema in the Age of Algorithms",
+    "imageUrl": "/article-images/article-71.jpeg"
+  },
+  {
+    "title": "Jake Loosararian: The Resilient Visionary Building Tomorrow's Infrastructure Intelligence",
+    "imageUrl": "/article-images/article-72.png"
+  },
+  {
+    "title": "Shalev Hulio & Dream: From Offensive Cyber Operations to National Defense Strategy",
+    "imageUrl": "/article-images/article-73.png"
+  },
+  {
+    "title": "Anton Osika: The Swedish Physicist Democratizing Software Creation Through Lovable",
+    "imageUrl": "/article-images/article-74.png"
+  },
+  {
+    "title": "Sameer Nigam: The Architect of India's Digital Payments Revolution",
+    "imageUrl": "/article-images/article-75.png"
+  },
+  {
+    "title": "The Collison Brothers: Building the Economic Infrastructure of the Internet",
+    "imageUrl": "/article-images/article-76.png"
+  },
+  {
+    "title": "MoEngage: Crafting the Future of AI-Powered Customer Engagement Through Innovation and Visionary Leadership",
+    "imageUrl": "/article-images/article-77.png"
+  },
+  {
+    "title": "AI Bubble Burst : Why Instant Diffusion Makes It Irrelevant",
+    "imageUrl": "/article-images/article-78.png"
+  },
+  {
+    "title": "Christensen's Enduring Wisdom: Leveraging Disruptive Innovation Theory for the Journey to Unicorn Status and Beyond",
+    "imageUrl": "/article-images/article-79.png"
+  },
+  {
+    "title": "Niklas Zennström: The Visionary Who Connected the World and Revolutionized European Tech",
+    "imageUrl": "/article-images/article-80.png"
+  },
+  {
+    "title": "Giga AI: From IIT Kharagpur to AI's Customer Support Revolution",
+    "imageUrl": "/article-images/article-81.png"
+  },
+  {
+    "title": "Transforming Retail Through Operational AI: How Deep Domain Models Drive Competitive Advantage ... And Prepare for AGI",
+    "imageUrl": "/article-images/article-82.png"
+  },
+  {
+    "title": "i2u.ai: The Startup Ecosystem Booster, Transforming How Innovation Happens",
+    "imageUrl": "/article-images/article-83.png"
+  },
+  {
+    "title": "The RenAIssance Discontinuity: Why 50X Growth and Month-Long Unicorns Define the AGI Era",
+    "imageUrl": "/article-images/article-84.png"
+  },
+  {
+    "title": "The Visionary Builder: How Samir Vasavada is Redefining Wealth Management Through AI",
+    "imageUrl": "/article-images/article-85.png"
+  },
+  {
+    "title": "Dan Lorenc: Architect of Trust in the Software Supply Chain",
+    "imageUrl": "/article-images/article-86.png"
+  },
+  {
+    "title": "Avery Pennarun: The Architect of Zero-Trust Networking Who Dreamed of Fixing the Internet",
+    "imageUrl": "/article-images/article-87.png"
+  },
+  {
+    "title": "Liran Zvibel: The Architect Behind AI's Data Infrastructure Revolution",
+    "imageUrl": "/article-images/article-88.png"
+  },
+  {
+    "title": "Dave Rogenmoser, John Philip Morgan & Chris Hull: The Triumvirate Architects Behind Jasper AI's Ascent",
+    "imageUrl": "/article-images/article-89.png"
+  },
+  {
+    "title": "The Visionary Architects of AI Infrastructure: Lukas Biewald and Chris Van Pelt Transform Machine Learning Operations",
+    "imageUrl": "/article-images/article-90.png"
+  },
+  {
+    "title": "From Dreams to Digital: The Saidov Brothers and Beamery's Rise to Unicorn Status",
+    "imageUrl": "/article-images/article-91.jpeg"
+  },
+  {
+    "title": "Ron Daniel: The Visionary Architect Behind Liquidity Group's AI Revolution",
+    "imageUrl": "/article-images/article-92.png"
+  },
+  {
+    "title": "Nicholas Harris: Engineering Light to Power the Future of AI",
+    "imageUrl": "/article-images/article-93.png"
+  },
+  {
+    "title": "Alex Bouaziz, Deel’s Visionary CEO: Engineering the Global Workforce Revolution",
+    "imageUrl": "/article-images/article-94.png"
+  },
+  {
+    "title": "The Architects of Data Activation: Kashish Gupta and Tejas Manohar's Journey to Building Hightouch",
+    "imageUrl": "/article-images/article-95.png"
+  },
+  {
+    "title": "Mujeeb Ijaz of Our Next Energy: Visionary Leadership, Breakthroughs, and Impact",
+    "imageUrl": "/article-images/article-96.png"
+  },
+  {
+    "title": "Grant Demaree: Building OneBrief to Transform Military Decision-Making at the Speed of War",
+    "imageUrl": "/article-images/article-97.png"
+  },
+  {
+    "title": "Karandeep Anand: Architecting AI Entertainment's Next Chapter at Character.AI",
+    "imageUrl": "/article-images/article-98.png"
+  },
+  {
+    "title": "Iker Huerga: Pioneering the Future of AI-Enabled Drug Development",
+    "imageUrl": "/article-images/article-99.jpeg"
+  },
+  {
+    "title": "Umesh Sachdev and Ravi Saraogi: Architecting Enterprise AI's Future",
+    "imageUrl": "/article-images/article-100.jpeg"
+  },
+  {
+    "title": "Visionary Leaders in the Age of AI-Native Data Security: Yotam Segev and Tamar Bar-Ilan Transform Enterprise Data Protection",
+    "imageUrl": "/article-images/article-101.png"
+  },
+  {
+    "title": "Winston Weinberg: The Lawyer Who Built a $5 Billion AI Empire in Three Years",
+    "imageUrl": "/article-images/article-102.png"
+  },
+  {
+    "title": "Xu Li: The Visionary Leading SenseTime's AI Revolution Through Innovation and Resilience",
+    "imageUrl": "/article-images/article-103.png"
+  },
+  {
+    "title": "Sam Altman: Architecting the Future of AI Through Visionary Leadership",
+    "imageUrl": "/article-images/article-104.jpeg"
+  },
+  {
+    "title": "Jack Hidary: Architecting the Quantum-AI Renaissance at SandboxAQ",
+    "imageUrl": "/article-images/article-105.jpeg"
+  },
+  {
+    "title": "The Ocean of Intellect: Living in an Era of 1,000,000X (1Mx) Productivity, Now Onwards",
+    "imageUrl": "/article-images/article-106.jpeg"
+  },
+  {
+    "title": "The Startup RenAIssance: How AI Transforms Global Entrepreneurship, Now Onwards!",
+    "imageUrl": "/article-images/article-107.jpeg"
+  },
+  {
+    "title": "The AI Era: The Fastest Diffusion of a General Purpose Technology (GPT)",
+    "imageUrl": "/article-images/article-108.jpeg"
+  },
+  {
+    "title": "The Autonomous Internet: When AI Agents Run Every Digital Touchpoint in Our Connected World",
+    "imageUrl": "/article-images/article-109.png"
+  },
+  {
+    "title": "The AI Agent Revolution: A Comprehensive Analysis of Global Workforce Transformation and Market Demand (2025-2045)",
+    "imageUrl": "/article-images/article-110.png"
+  },
+  {
+    "title": "The Architect of the Web's Future: Guillermo Rauch's Journey from Buenos Aires to Silicon Valley's Pinnacle",
+    "imageUrl": "/article-images/article-111.jpeg"
+  },
+  {
+    "title": "Arthur Mensch: Architecting Europe's AI Renaissance Through Open Innovation",
+    "imageUrl": "/article-images/article-112.jpeg"
+  },
+  {
+    "title": "The Mercor Triad: How Three 22-Year-Old Debate Champions Built the Fastest-Growing Company in History",
+    "imageUrl": "/article-images/article-113.png"
+  },
+  {
+    "title": "Yan Junjie: The AI Visionary Redefining China's Path to Artificial General Intelligence",
+    "imageUrl": "/article-images/article-114.jpeg"
+  },
+  {
+    "title": "Daphne Koller: Pioneering the Future of AI-Driven Drug Discovery Through Insitro",
+    "imageUrl": "/article-images/article-115.png"
+  },
+  {
+    "title": "Hosam Arab: The Visionary Leading Tabby's Revolutionary Transformation of Middle East Finance",
+    "imageUrl": "/article-images/article-116.png"
+  },
+  {
+    "title": "Vishal Marria: The Architect of Decision Intelligence",
+    "imageUrl": "/article-images/article-117.jpeg"
+  },
+  {
+    "title": "Pioneering the Future of AI-Driven Software Development: An In-Depth Assessment of Jason Warner and Eiso Kant's Revolutionary Journey at Poolside",
+    "imageUrl": "/article-images/article-118.png"
+  },
+  {
+    "title": "The Architect of Programmable IP: Seung Yoon Lee's Vision for Creator Rights in the AI Era",
+    "imageUrl": "/article-images/article-119.png"
+  },
+  {
+    "title": "The Virani Brothers: Architects of India's Snack Empire",
+    "imageUrl": "/article-images/article-120.png"
+  },
+  {
+    "title": "John Imah: The Visionary Architect Reshaping Fashion's AI Frontier",
+    "imageUrl": "/article-images/article-121.png"
+  },
+  {
+    "title": "Visionary Disruptors: The Triad Transforming India's Wealth Management Landscape",
+    "imageUrl": "/article-images/article-122.png"
+  },
+  {
+    "title": "The Visionary Duo Behind Writer: May Habib and Waseem AlShikh Transform Enterprise AI",
+    "imageUrl": "/article-images/article-123.png"
+  },
+  {
+    "title": "The Sakana AI Triumvirate: Pioneering Nature-Inspired AI in Japan",
+    "imageUrl": "/article-images/article-124.png"
+  },
+  {
+    "title": "Viswa Colluru: The Architect of Nature's Digital Renaissance",
+    "imageUrl": "/article-images/article-125.png"
+  },
+  {
+    "title": "Tuhin Srivastava: Building the Foundation of AI's Future",
+    "imageUrl": "/article-images/article-126.png"
+  },
+  {
+    "title": "Munjal Shah: The Visionary Architect of Healthcare AI Revolution",
+    "imageUrl": "/article-images/article-127.jpeg"
+  },
+  {
+    "title": "David Luan: The Visionary Architect of Artificial General Intelligence",
+    "imageUrl": "/article-images/article-128.png"
+  },
+  {
+    "title": "Kevin Czinger: The Visionary Architect of Tomorrow's Manufacturing Revolution",
+    "imageUrl": "/article-images/article-129.png"
+  },
+  {
+    "title": "The Balaban Brothers: Twin Visionaries Powering the AI Revolution Through Lambda Labs",
+    "imageUrl": "/article-images/article-130.png"
+  },
+  {
+    "title": "The Fintech Architects: V.R. Govindarajan and Debasish Chakraborty Transform India's Financial Infrastructure Through Perfios",
+    "imageUrl": "/article-images/article-131.png"
+  },
+  {
+    "title": "The Visionary Architects: Ivan Zhao and Simon Last's Revolutionary Journey at Notion",
+    "imageUrl": "/article-images/article-132.png"
+  },
+  {
+    "title": "The Visionary Architect of Tomorrow: Bernt Børnich and the Humanoid Revolution at 1X Technologies",
+    "imageUrl": "/article-images/article-133.png"
+  },
+  {
+    "title": "Edwin Chen: The Quiet Genius Who Built AI's Most Essential Empire",
+    "imageUrl": "/article-images/article-134.png"
+  },
+  {
+    "title": "Jan Koum: The Privacy Pioneer Who Built WhatsApp Through Adversity",
+    "imageUrl": "/article-images/article-135.png"
+  },
+  {
+    "title": "The Modern Titans of Defense Tech: Palmer Luckey & Brian Schimpf Forge the Future of National Security",
+    "imageUrl": "/article-images/article-136.png"
+  },
+  {
+    "title": "Brett Adcock of Archer Aviation: Engineering Tomorrow's Sky Through Bold Vision and Strategic Leadership",
+    "imageUrl": "/article-images/article-137.png"
+  },
+  {
+    "title": "The Architect of Modern AI Networking: Jayashree Ullal's Transformational Leadership at Arista Networks",
+    "imageUrl": "/article-images/article-138.png"
+  },
+  {
+    "title": "Munir Machmud Ali: The Data Intelligence Visionary Reshaping Indonesia's Tech Landscape",
+    "imageUrl": "/article-images/article-139.png"
+  },
+  {
+    "title": "Jeffrey Cardenas: The Visionary Architect of Humanoid Robotics",
+    "imageUrl": "/article-images/article-140.png"
+  },
+  {
+    "title": "The Burrito Pioneer: How Bert Mueller Built India's Most Beloved Mexican Food Empire",
+    "imageUrl": "/article-images/article-141.png"
+  },
+  {
+    "title": "The Streaming Visionary: Anthony Wood's Journey from Dorm Room Dreams to Roku Empire",
+    "imageUrl": "/article-images/article-142.png"
+  },
+  {
+    "title": "The Kantara Visionary: Rishab Shetty's Revolutionary Journey Through the Lens of Entrepreneurial Excellence",
+    "imageUrl": "/article-images/article-143.png"
+  },
+  {
+    "title": "Brett Adcock: The Visionary Architect of AI's Physical Future",
+    "imageUrl": "/article-images/article-144.png"
+  },
+  {
+    "title": "Visionary Leadership in Humanoid Robotics: The Strategic Excellence of Peggy Johnson and Paras Velegapudi at Agility Robotics",
+    "imageUrl": "/article-images/article-145.png"
+  },
+  {
+    "title": "Victor Riparbelli: The Visionary Architect of AI-Powered Video Revolution",
+    "imageUrl": "/article-images/article-146.png"
+  },
+  {
+    "title": "The Visionaries of Wall Street Democracy: Vlad Tenev & Baiju Bhatt",
+    "imageUrl": "/article-images/article-147.png"
+  },
+  {
+    "title": "The Visionary Behind Spatial Intelligence: Fei-Fei Li's Revolutionary Journey with World Labs",
+    "imageUrl": "/article-images/article-148.png"
+  },
+  {
+    "title": "The Visionary Architects of AI's Future: Ramin Hasani and Mathias Lechner of Liquid AI",
+    "imageUrl": "/article-images/article-149.png"
+  },
+  {
+    "title": "Karol Hausman of Physical Intelligence: Charting the Future of Robotic Intelligence",
+    "imageUrl": "/article-images/article-150.jpeg"
+  },
+  {
+    "title": "Tom Siebel: Vision Architect of Enterprise AI",
+    "imageUrl": "/article-images/article-151.png"
+  },
+  {
+    "title": "The Bezos Blueprint: A Visionary's Journey from Garage Startup to Global Empire",
+    "imageUrl": "/article-images/article-152.png"
+  },
+  {
+    "title": "The Architect of Apple: Steve Jobs' Struggle, Triumph, and the Path Forward",
+    "imageUrl": "/article-images/article-153.png"
+  },
+  {
+    "title": "The Visionary Duo: Kyle Vogt and Paril Jain's Revolutionary Robotics Journey",
+    "imageUrl": "/article-images/article-154.jpeg"
+  },
+  {
+    "title": "The Skild Duo: How Deepak Pathak and Abhinav Gupta are Building the Future of Robotics Intelligence",
+    "imageUrl": "/article-images/article-155.png"
+  },
+  {
+    "title": "The Visionaries Behind Decagon: Jesse Zhang and Ashwin Sreenivas Redefining AI Customer Experience",
+    "imageUrl": "/article-images/article-156.png"
+  },
+  {
+    "title": "The Dynamic Duo Revolutionizing Drug Discovery: Chris Gibson and Dean Li's AI-Powered Vision at Recursion Pharmaceuticals",
+    "imageUrl": "/article-images/article-157.png"
+  },
+  {
+    "title": "The AI Native Visionaries: Arjun Prakash and Derek Ho's Revolutionary Journey with Distyl AI",
+    "imageUrl": "/article-images/article-158.jpeg"
+  },
+  {
+    "title": "The Visionaries Behind the Light: David Lazovsky and Preet Virk's Revolutionary Journey with Celestial AI",
+    "imageUrl": "/article-images/article-159.jpeg"
+  },
+  {
+    "title": "The Architect of AI Infrastructure: Rochan Sankar's Journey from Silicon Dreams to Nvidia's $900 Million Bet",
+    "imageUrl": "/article-images/article-160.jpeg"
+  },
+  {
+    "title": "Celonis: The Process Intelligence Pioneer Transforming Enterprise Operations at Scale",
+    "imageUrl": "/article-images/article-161.png"
+  },
+  {
+    "title": "The Polymath Pioneers: How Daniel Nadler and Zachary Ziegler are Revolutionizing Medical Knowledge through AI",
+    "imageUrl": "/article-images/article-162.png"
+  },
+  {
+    "title": "The Saronic Quartet: Maritime Visionaries Redefining Naval Defense",
+    "imageUrl": "/article-images/article-163.jpeg"
+  },
+  {
+    "title": "Jensen Huang: The Visionary Who Transformed Computing and Redefined Leadership",
+    "imageUrl": "/article-images/article-164.png"
+  },
+  {
+    "title": "The Visionary Behind the Wheel: Avneesh Agrawal and Netradyne's AI-Powered Revolution in Fleet Safety",
+    "imageUrl": "/article-images/article-165.jpeg"
+  },
+  {
+    "title": "The Visionary Triad: How Jeremy Achin, Tom De Godoy, and Debanjan Saha are Democratizing AI Through DataRobot",
+    "imageUrl": "/article-images/article-166.png"
+  },
+  {
+    "title": "Eric Lefkofsky: The Serial Entrepreneur Revolutionizing Precision Medicine",
+    "imageUrl": "/article-images/article-167.png"
+  },
+  {
+    "title": "The Helsing Trinity: Architects of Europe's AI Defense Revolution",
+    "imageUrl": "/article-images/article-168.png"
+  },
+  {
+    "title": "The Visionary Duo Democratizing AI: Vipul Ved Prakash & Ce Zhang of Together AI",
+    "imageUrl": "/article-images/article-169.jpeg"
+  },
+  {
+    "title": "The Venture Capital Titan: Sequoia Capital Through the Lens of Strategic Excellence",
+    "imageUrl": "/article-images/article-170.png"
+  },
+  {
+    "title": "The Voice Visionaries: Mati Staniszewski and Piotr Dąbkowski Revolutionizing AI Audio",
+    "imageUrl": "/article-images/article-171.jpeg"
+  },
+  {
+    "title": "The Pioneering Leaders Revolutionizing Mineral Exploration: Kurt House, Josh Goldman, and Mfikeyi Makayi of KoBold Metals",
+    "imageUrl": "/article-images/article-172.jpeg"
+  },
+  {
+    "title": "The Visionary Trio Behind Runway AI: Revolutionizing Creative Technology Through Generative Intelligence",
+    "imageUrl": "/article-images/article-173.png"
+  },
+  {
+    "title": "Kareem Amin & Varun Anand: The Visionary Duo Revolutionizing Go-to-Market with Clay AI",
+    "imageUrl": "/article-images/article-174.png"
+  },
+  {
+    "title": "Matt Zeiler: The Visionary Behind Clarifai's AI Revolution",
+    "imageUrl": "/article-images/article-175.png"
+  },
+  {
+    "title": "The Visionary Duo: Varun Mohan and Douglas Chen's Journey to AI Coding Supremacy",
+    "imageUrl": "/article-images/article-176.jpeg"
+  },
+  {
+    "title": "Vision, Ingenuity, and Industry: The Simon Kalouche & Nimble Story",
+    "imageUrl": "/article-images/article-177.jpeg"
+  },
+  {
+    "title": "The Trinity of Innovation: Mustafa Suleyman, Karén Simonyan, and Reid Hoffman's Journey Through AI's Next Frontier",
+    "imageUrl": "/article-images/article-178.jpeg"
+  },
+  {
+    "title": "The Evolution of Industry: From Steam Power to Quantum Intelligence",
+    "imageUrl": "/article-images/article-179.jpeg"
+  },
+  {
+    "title": "When Tier-1 VC Validation Becomes Ecosystem Fuel",
+    "imageUrl": "/article-images/article-180.jpeg"
+  },
+  {
+    "title": "Scott Wu: The Mathematical Prodigy Revolutionizing AI Software Engineering",
+    "imageUrl": "/article-images/article-181.jpeg"
+  },
+  {
+    "title": "The VideoVerse Visionaries: Transforming AI-Powered Video Technology",
+    "imageUrl": "/article-images/article-182.png"
+  },
+  {
+    "title": "Mira Murati and Thinking Machines Lab: Pioneering Human-Centric Frontier AI",
+    "imageUrl": "/article-images/article-183.png"
+  },
+  {
+    "title": "The Moonshot Visionary: Yang Zhilin - Pioneering China's AI Renaissance",
+    "imageUrl": "/article-images/article-184.png"
+  },
+  {
+    "title": "Dr. Shiv Rao: The Cardiologist-CEO Transforming Healthcare with AI",
+    "imageUrl": "/article-images/article-185.png"
+  },
+  {
+    "title": "The Moveworks Quartet: How 4 Visionaries Built a $2.85 Billion AI Empire",
+    "imageUrl": "/article-images/article-186.png"
+  },
+  {
+    "title": "The Glean Quartet: Visionary Leadership Transforming Enterprise AI",
+    "imageUrl": "/article-images/article-187.png"
+  },
+  {
+    "title": "The Visionary Quartet Behind Cursor AI",
+    "imageUrl": "/article-images/article-188.png"
+  },
+  {
+    "title": "From Mathematics to Market Mastery: The Fractal Analytics Trinity",
+    "imageUrl": "/article-images/article-189.jpeg"
+  },
+  {
+    "title": "The Grammarly Triumvirate: How Three Ukrainian Visionaries Built a $13 Billion AI Empire",
+    "imageUrl": "/article-images/article-190.png"
+  },
+  {
+    "title": "Tim Schumacher: The Domain Visionary Who Became Europe's Climate Tech Champion",
+    "imageUrl": "/article-images/article-191.jpeg"
+  },
+  {
+    "title": "The Automation Architects: How Daniel Dines, Marius Tîrcă & Rahul Sood Built UiPath's $36 Billion Empire",
+    "imageUrl": "/article-images/article-192.png"
+  },
+  {
+    "title": "The Meteoric Rise of Michael Intrator: From Wall Street Trader to AI Empire Builder",
+    "imageUrl": "/article-images/article-193.png"
+  },
+  {
+    "title": "The Visionary Behind the $100+ Billion Data Revolution",
+    "imageUrl": "/article-images/article-194.png"
+  },
+  {
+    "title": "The Amodei Siblings: Transforming AI Through Constitutional Innovation",
+    "imageUrl": "/article-images/article-195.png"
+  },
+  {
+    "title": "The Visionary Who Democratized Design: Melanie Perkins' Extraordinary Journey",
+    "imageUrl": "/article-images/article-196.png"
+  },
+  {
+    "title": "Liang Wenfeng: The Maverick Who Disrupted AI with DeepSeek",
+    "imageUrl": "/article-images/article-197.png"
+  },
+  {
+    "title": "Ilya Sutskever: The Neural Network Visionary Who Architected the AI Revolution",
+    "imageUrl": "/article-images/article-198.jpeg"
+  },
+  {
+    "title": "Zhang Yiming and Liang Rubo: The ByteDance Revolution",
+    "imageUrl": "/article-images/article-199.png"
+  },
+  {
+    "title": "Suzanne Gildert: Pioneer of Conscious AI Revolution",
+    "imageUrl": "/article-images/article-200.png"
+  },
+  {
+    "title": "Aravind Srinivas: From IIT Chennai to the Forefront of AI Search Revolution",
+    "imageUrl": "/article-images/article-201.png"
+  },
+  {
+    "title": "AI Unicorns & Soonicorns: The $1.1 Trillion AI Revolution Reshaping Global Business",
+    "imageUrl": "/article-images/article-202.png"
+  },
+  {
+    "title": "Demis Hassabis: From Chess Prodigy to Nobel Laureate",
+    "imageUrl": "/article-images/article-203.png"
+  },
+  {
+    "title": "Alexandr Wang: From Math Prodigy to Meta's AI Visionary",
+    "imageUrl": "/article-images/article-204.png"
+  },
+  {
+    "title": "Nikita Bier: The Master of Viral App Creation and the Future of Growth",
+    "imageUrl": "/article-images/article-205.jpeg"
+  },
+  {
+    "title": "The Intelligence Convergence: When Every Human Becomes a Superpower",
+    "imageUrl": "/article-images/article-206.jpeg"
+  },
+  {
+    "title": "The Innovation Spawning",
+    "imageUrl": "/article-images/article-207.jpeg"
+  },
+  {
+    "title": "The Great Acceleration",
+    "imageUrl": "/article-images/article-208.png"
+  },
+  {
+    "title": "Gaming Riddle: Unleashing India's Cognitive Economy?",
+    "imageUrl": "/article-images/article-209.jpeg"
+  },
+  {
+    "title": "The Great AI Paradox: When Innovation Meets the Reality of Implementation",
+    "imageUrl": "/article-images/article-210.png"
+  },
+  {
+    "title": "The Great AI Reckoning: When Innovation Meets Reality in the Age of AI",
+    "imageUrl": "/article-images/article-211.jpeg"
+  },
+  {
+    "title": "The Velocity Revolution: How AI is Reshaping Global Competition",
+    "imageUrl": "/article-images/article-212.jpeg"
+  },
+  {
+    "title": "The Productive Man-Years Revolution: How AI is Redefining History's Greatest Demographic Shift",
+    "imageUrl": "/article-images/article-213.jpeg"
+  },
+  {
+    "title": "The Strategic Awakening: Legacy Giants Face the Agentic AI Revolution",
+    "imageUrl": "/article-images/article-214.png"
+  },
+  {
+    "title": "The Great Leveling: How Agentic AI Is Rewriting the Rules of Digital Dominance",
+    "imageUrl": "/article-images/article-215.jpeg"
+  },
+  {
+    "title": "The Opportunity Revolution: The Greatest Democratization of Wealth Creation",
+    "imageUrl": "/article-images/article-216.jpeg"
+  },
+  {
+    "title": "The Intelligence Convergence: How 2025 Became the Year Everything Changed",
+    "imageUrl": "/article-images/article-217.jpeg"
+  },
+  {
+    "title": "The RenAIssance Revolution: How Organic AI, Quantum Computing & Nuclear Breakthroughs are Orchestrating Renaissance",
+    "imageUrl": "/article-images/article-218.jpeg"
+  },
+  {
+    "title": "The RenAIssance: How AI Is Orchestrating Humanity's Greatest Innovation, Renaissance",
+    "imageUrl": "/article-images/article-219.png"
+  },
+  {
+    "title": "Catalyzing the Hyper-Unicorn Era: How AI-First Ecosystems Are Turning Founders into Global Game-Changers",
+    "imageUrl": "/article-images/article-220.jpeg"
+  },
+  {
+    "title": "The AI Era: Humanity's Multiverse Bang",
+    "imageUrl": "/article-images/article-221.jpeg"
+  },
+  {
+    "title": "Breaking the Intelligence Singularity: From Steve Jobs' Leadership Paradox to Consciousness-Enabled AI Systems - Part 2",
+    "imageUrl": "/article-images/article-222.jpeg"
+  },
+  {
+    "title": "Breaking the Intelligence Singularity: From Steve Jobs' Leadership Paradox to Consciousness-Enabled AI Systems - Part 1",
+    "imageUrl": "/article-images/article-223.png"
+  }
+]
